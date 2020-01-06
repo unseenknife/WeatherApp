@@ -1,0 +1,43 @@
+extends layout
+
+block content
+    .container
+        .col-8.offset-3
+            h1= title
+            .row
+                form(method='POST' action='/~s1133868/P2_NodeJS_Opdracht/998/' class='searchPlaceForm')
+                    div.form-group
+                        input#place.form-control(type='text', placeholder='Vul hier je plaatsnaam in' name='city')
+                        button.btn.btn-secondary(type='submit')
+                            i.fas.fa-search-location
+
+        .col-5.offset-4
+            .card
+                .card-body
+                    .card-title
+                        .row
+                            h3.data #{place}
+                            h3.temp #{temp} °C
+                        br
+                        .card-text
+                            .row
+                                i.fas.fa-cloud.data
+                                .p.data #{data}
+                            br
+                            .row
+                                i.fas.fa-temperature-low.data
+                                .p.data min temp: #{minTemp} °C
+                            .row
+                                i.fas.fa-temperature-high.data
+                                .p.data max temp: #{maxTemp} °C
+                            br
+                            .row
+                                i.fas.fa-tint.data
+                                .p.data luchtvochtigheid: #{humidity}%
+                            br
+                            .row
+                                i.fas.fa-wind.data
+                                .p.data wind: #{wind} km/h
+                            .row
+                                .p.knot Knopen: #{bft}
+
